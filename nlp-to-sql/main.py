@@ -2,6 +2,7 @@
 
 import os
 import logging
+from dotenv import load_dotenv
 
 import pandas as pd
 import openai
@@ -10,12 +11,15 @@ import db_utils
 import openai_utils
 
 logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
+
+load_dotenv()
 openai.api_key = os.environ["OPENAI_API_KEY"]
+
+DATA_FILE = 'data/sales_data_sample.csv'
 
 if __name__ == "__main__":
     logging.info("Loading data...")
-    # CSV file is hardcoded here
-    df = pd.read_csv("data/sales_data_sample.csv")
+    df = pd.read_csv(DATA_FILE)
     logging.info(f"Data Format: {df.shape}")
 
     logging.info("Converting to database...")
