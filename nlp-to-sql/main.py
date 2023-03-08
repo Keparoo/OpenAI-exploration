@@ -15,7 +15,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 load_dotenv()
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
-DATA_FILE = 'data/sales_data_sample.csv'
+DATA_FILE = 'sales_data_sample.csv'
 
 if __name__ == "__main__":
     logging.info("Loading data...")
