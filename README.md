@@ -98,3 +98,51 @@ Presence and Frequency Penalties: The presence penalty is a one-off additive con
 ## Testing in the playground
 
 [Playground](https://platform.openai.com/playground)
+
+## Beware of prompt leakage or prompt reverse engineering
+
+[Prompt reverse engineering](https://lspace.swyx.io/p/reverse-prompt-eng)
+
+## Prompt Design
+
+- **Model**:  
+  the latest will give the best results
+
+- **Instructions**:  
+  Put instructions at the beginning of a prompt and use ### or “”” to separate out instructions from the desired output
+
+```bash
+Summarize the text below into bullet points.
+
+Text: “””
+{some text}
+“””
+```
+
+- **Detail**:  
+  instead of write a poen about OpenAI, “Write a poem about OpenAI in the style of a Haiku, make sure to only write 3 lines and focus on GPT.
+
+- **Examples**:
+
+```bash
+Extract the first and last names from the text below:
+
+Desired format:
+Last Name, First Name
+{some text}
+```
+
+- **Be Direct**:  
+  Create a 3 to 5-sentence description about the product in the text below: {some text}
+
+- **Initiate the Response**:
+
+```bash
+Instead of: Write a python function to scrape the wikipedia page on the world’s tallest buildings.
+Try: The python function below scrapes Wikipedia to return a CSV of the world’s tallest buildings and their stats.
+
+def scrape_wiki(
+or start with import
+```
+
+[OpenAI Prompt Design Guide](https://platform.openai.com/docs/guides/completion/prompt-design)
