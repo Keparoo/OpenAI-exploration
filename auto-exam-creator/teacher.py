@@ -16,7 +16,7 @@ class Teacher:
     def create_full_test(self):
 
         topic = input("What topic would you like to create a test on? ")
-        num_possible_answers = int(input("How many possible answers would you like to have? "))
+        num_possible_answers = int(input("How many possible questions would you like to have? "))
         num_questions = int(input("How many possible answers per question would you like to have? "))
 
         self.test_creator = TestGenerator(topic, num_possible_answers, num_questions)
